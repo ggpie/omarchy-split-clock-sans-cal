@@ -1,6 +1,6 @@
 # Apple-like Clock aka Better Calendar
 
-![The calendar, world clock, analogue clock, stopwatch, countdown timer and alarms](preview.png)
+![world clock, analogue clock, stopwatch, countdown timer and alarms](preview.png)
 
 Omarchy's bar clock, split in two:
 
