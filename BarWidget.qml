@@ -23,8 +23,8 @@ BarWidget {
 
   property date displayDate: clock.date
 
-  readonly property var dayFormats: ["dddd", "ddd d MMM", "d MMMM yyyy", "dddd d"]
-  readonly property var timeFormats: ["HH:mm", "HH:mm:ss", "h:mm AP"]
+  readonly property var dayFormats: ["dddd", "dd dd MM", "dd MM yyyy", "dddd d"]
+  readonly property var timeFormats: ["󱎫", "󰀠", "󰔟"]
 
   readonly property string dayFormat: setting("dayFormat", dayFormats[0])
   readonly property string timeFormat: setting("timeFormat", timeFormats[0])
@@ -129,7 +129,7 @@ BarWidget {
 
   Loader {
     id: calendarLoader
-    active: true
+    active: false
     source: Qt.resolvedUrl("CalendarPanel.qml")
     visible: false
     onLoaded: { root.injectPanels(); Qt.callLater(root.injectPanels) }
@@ -221,21 +221,21 @@ BarWidget {
     columns: root.vertical ? 1 : 2
     spacing: 0
 
-    WidgetButton {
-      id: dayButton
-      bar: root.bar
-      text: root.dayText
-      hasVisualContent: text !== ""
-      horizontalMargin: 5
-      verticalPadding: 8.75
-      tooltipText: "Calendar"
+  //  WidgetButton {
+   //   id: dayButton
+     // bar: root.bar
+      //text: root.dayText
+      //hasVisualContent: text !== ""
+      //horizontalMargin: 0.00 
+      //verticalPadding: 0.00
+      //tooltipText: "Calendar"
 
-      onPressed: function(b) {
-        if (b === Qt.RightButton) root.cycleDayFormat()
-        else if (b === Qt.MiddleButton) { if (root.bar) root.bar.run("omarchy-menu-timezone") }
-        else root.togglePanel()
-      }
-    }
+      //onPressed: function(b) {
+       // if (b === Qt.RightButton) root.cycleDayFormat()
+        //else if (b === Qt.MiddleButton) { if (root.bar) root.bar.run("omarchy-menu-timezone") }
+        //else root.togglePanel()
+      //}
+   // }
 
     WidgetButton {
       id: timeButton
